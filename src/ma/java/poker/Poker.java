@@ -23,12 +23,9 @@ public class Poker {
         System.out.println("1. " + myHand.toString() + " - " + new HandEvaluator(myHand).getCombination());
         System.out.println("2. " + otherHand.toString() + " - " + new HandEvaluator(otherHand).getCombination());
 
-        HandComparator handComparator = new HandComparator();
-        int compareResult = handComparator.compare(myHand, otherHand);
-
-        if (compareResult == 0) {
+        if (myHand.isEqualTo(otherHand)) {
             System.out.println("Hands are equal");
-        } else if (compareResult > 0) {
+        } else if (myHand.isBiggerThan(otherHand)) {
             System.out.println("First hand is bigger");
         } else {
             System.out.println("Second hand is bigger");
